@@ -9,17 +9,24 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".JoinActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".CompanyActivity"></activity>
-        <activity android:name=".PersonalActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MapActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".JoinActivity"/>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".CompanyActivity"/>
+        <activity android:name=".PersonalActivity"/>
+        <activity android:name=".MainActivity">
+
+        </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <meta-data android:name="com.kakao.sdk.AppKey" android:value="315376456c1dc98a1884db3c17e7d7ab"/>
 
 </manifest>
