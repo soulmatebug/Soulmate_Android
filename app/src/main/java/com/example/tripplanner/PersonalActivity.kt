@@ -10,6 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_personal.*
+import org.jetbrains.anko.toast
 
 class PersonalActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference// ...
@@ -35,6 +36,16 @@ class PersonalActivity : AppCompatActivity() {
         submitBtn.setOnClickListener {
             if (e_mail_input.text.toString().isEmpty() || password_input.text.toString().isEmpty() || password_test_input.text.toString().isEmpty()) {
                 Toast.makeText(this, "입력되지 않은 칸이 있습니다.", Toast.LENGTH_SHORT).show()
+            } else if (password_input.text.toString().length < 6) {
+                toast("비밀번호는 최소 6글자 이상이어야 합니다.")
+                password_test_input.setText("")
+                pw?.setText("")
+                pw?.requestFocus()
+            } else if (password_input.text.toString() != password_test_input.text.toString()) {
+                toast("비밀번호가 다릅니다.")
+                password_test_input.setText("")
+                pw?.setText("")
+                pw?.requestFocus()
             } else {
                 auth.createUserWithEmailAndPassword(e_mail_input.text.toString(), password_input.text.toString())
                     .addOnCompleteListener(this) { task ->
