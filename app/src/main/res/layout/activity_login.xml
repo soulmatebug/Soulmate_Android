@@ -10,12 +10,16 @@
             android:background="@color/colorMain"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize"
-            android:id="@+id/toolbar3"/>
+            android:id="@+id/toolbar3">
 
-    <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="로그아웃"
-            android:id="@+id/btn_logout"/>
+        <Button android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="로그아웃"
+                android:background="@null"
+                android:layout_gravity="right"
+                android:id="@+id/btn_logout"/>
+    </android.support.v7.widget.Toolbar>
+
     <android.support.v4.view.ViewPager
             android:layout_weight="1"
             android:id="@+id/viewpager_main"
