@@ -10,12 +10,13 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".JoinActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity">
+
+        </activity>
         <activity android:name=".CompanyActivity"></activity>
         <activity android:name=".PersonalActivity"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
